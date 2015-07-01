@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% block title %} - Problemas{% endblock %}
+
+{% block styles %}
+{% endblock %}
+
+{% block content %}
+<div class="row margin-top">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Listagem de Problemas
+                <a href="{{ url }}/problemas/novo" class="btn btn-primary pull-right" style="padding: 7px; margin-top: -8px; margin-right: -12px">
+                    <i class="fa fa-plus-square fa-lg"></i> Adicionar
+                </a>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="panel-body no-padding table-responsive">
+
+                    <table class="table table-striped" id="dtTables">
+                        <thead>
+                        <tr>
+                            <th>#ID</th>
+                            <th>Cliente</th>
+                            <th>Título</th>
+                            <th>Categoria</th>
+                            <th>Data/Hora</th>
+                            <th>Usuário</th>
+                            <th>Ações</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for item in problemas %}
+                        <tr>
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.cliente }}</td>
+                            <td>{% filter upper %}{{ item.titulo }}{% endfilter %}</td>
+                            <td>{{ item.categoria }}</td>
+                            <td>{{ item.data_hora }}</td>
+                            <td>{{ item.usuario }}</td>
+                            <td><a href="{{ url }}/topico/novo/{{ item.id }}"><i
+                                    class="fa fa-plus-square fa-lg"></i></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-6 -->
+    </div>
+    <!-- /.row -->
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+
+<!-- jQuery Confirm -->
+<script src="{{ url }}public/js/jquery.confirm.min"></script>
+<!-- Datatables -->
+<link rel="stylesheet" type="text/css"
+      href="//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.css">
+<script type="text/javascript" language="javascript"
+        src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript"
+        src="//cdn.datatables.net/plug-ins/1.10.7/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+
+<!-- DataTables JavaScript -->
+<script>
+
+    $('#dtTables').DataTable({
+        aaSorting : [[0, 'desc']],
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.7/i18n/Portuguese-Brasil.json"
+        }
+    });
+
+
+    $(".delete").confirm({
+        text: "Tem certeza que deseja excluir?",
+        title: "Confirmação necessária",
+        confirm: function (button) {
+            window.location.href = button[0].href;
+        },
+        cancel: function (button) {
+            // nothing to do
+        },
+        confirmButton: "Confirmar",
+        cancelButton: "Cancelar",
+        post: true,
+        confirmButtonClass: "btn-danger",
+        cancelButtonClass: "btn-default",
+        dialogClass: "modal-dialog modal-md" // Bootstrap classes for large modal
+    });
+
+</script>
+
+{% endblock %}

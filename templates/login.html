@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CMS Instituiçional - Administração</title>
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- BootStrap Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- MetisMenu CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.0.2/metisMenu.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- Style CSS -->
+    <link href="css/login.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body class="login-body">
+
+<!-- #wrapper -->
+<div id="wrapper">
+
+    <div id="logo" class="text-center logo">
+		<span class="logo-icon">
+			<i class="fa fa-phone-square fa-3x"></i>
+		</span>
+        <span class="logo-text">SCA</span>
+        <br>
+        <span class="logo-slogan">Sistema de Controle de Atendimento</span>
+    </div>
+
+    <!-- Conteúdo das Paginas -->
+    <div id="login">
+        <div class="login-box">
+            <form method="POST">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="text-center">
+                            Autenticação
+                        </h3>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="username">Usuário</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                                <input type="text" name="username" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="password">Senha</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-lock" style="width:14px"></i></div>
+                                <input type="password" name="password" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button class="btn btn-primary btn-block">
+                            Entrar
+                        </button>
+
+                        {% if msg is defined %}
+                        <div class="alert alert-danger" style="margin-top: 20px; margin-bottom: 0px">
+                            <a href="#" class="close" data-dismiss="alert">&times;</a>
+                            <strong>Erro!</strong> Nome de Usuário ou Senha Inválido!
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /.Conteúdo das Paginas -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<!-- BootStrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

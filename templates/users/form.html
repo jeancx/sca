@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block title %}
+
+- Novo Usuário
+
+{% endblock %}
+
+{% block styles %}
+{% endblock %}
+
+{% block content %}
+
+<div class="row margin-top">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Novo Usuário
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form role="form" method="post">
+                            <div class="form-group">
+                                <label>Nome</label>
+                                <input type="text" class="form-control" name="nome" value="{% if usuario is defined %}{{ usuario.nome}}{% endif %}">
+                            </div>
+                            <div class="form-group">
+                                <label>Usuário</label>
+                                <input type="text" class="form-control" name="username" value="{% if usuario is defined %}{{ usuario.username}}{% endif %}" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Senha</label>
+                                <input type="password" class="form-control" name="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Confirmar Senha</label>
+                                <input type="password" class="form-control" name="password_confirm" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="button" onclick="history.back()" class="btn btn-warning">Voltar</button>
+
+                        </form>
+                    </div>
+                </div>
+                <!-- /.row (nested) -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}

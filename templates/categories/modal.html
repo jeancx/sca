@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel">Adicionar Categoria</h4>
+</div>
+<div class="modal-body">
+
+    <div class="form-group">
+        <label>Título</label>
+        <input type="text" class="form-control" name="titulo" id="catTitulo">
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">
+        Cancelar
+    </button>
+    <button id="btnAdd" type="button" class="btn btn-primary">
+        Salvar
+    </button>
+</div>
+
+<script>
+
+    $("#btnAdd").click(function () {
+
+        var titulo = $("#catTitulo").val();
+
+        $.post("{{ url }}/categorias/modal/novo", {titulo: titulo})
+            .done(function () {
+                $( "#categoria_id" ).load( "{{ url }}/categorias/select", function() {});
+                $("[data-dismiss=modal]").trigger({type: "click"});
+            }
+        );
+
+    });
+
+</script>

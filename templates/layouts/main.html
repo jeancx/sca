@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SCA {% block title %}{% endblock %}</title>
+
+    {% include 'partials/styles.html' %}
+
+    {% block styles %}{% endblock %}
+
+</head>
+
+<body>
+
+{% include 'partials/header.html' %}
+
+{% block content %}{% endblock %}
+
+{% include 'partials/footer.html' %}
+
+{% include 'partials/scripts.html' %}
+
+{% block scripts %}{% endblock %}
+
+</body>
+
+</html>

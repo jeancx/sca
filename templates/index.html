@@ -1,0 +1,189 @@
+{% extends "layouts/main.html" %}
+
+{% block title %} - Sistema de Controle de Atendimentos{% endblock %}
+
+{% block styles %}
+{% endblock %}
+
+{% block content %}
+<div class="row margin-top">
+
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-danger" style="cursor: pointer">
+            <div class="panel-heading" onclick="location.href='{{ url }}/problemas'">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-life-ring fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <h3>{{ count.problemas.0 }}</h3>
+
+                        <div>Problemas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-warning" style="cursor: pointer">
+            <div class="panel-heading" onclick="location.href='{{ url }}/topicos'">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-plus-square fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <h3>{{ count.topicos.0 }}</h3>
+
+                        <div>Tópicos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-success" style="cursor: pointer">
+            <div class="panel-heading" onclick="location.href='{{ url }}/clientes'">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-briefcase fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <h3>{{ count.clientes.0 }}</h3>
+
+                        <div>Clientes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary" style="cursor: pointer">
+            <div class="panel-heading" onclick="location.href='{{ url }}/programadores'">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-users fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <h3>{{ count.programadores.0 }}</h3>
+
+                        <div>Programadores</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <a href="{{ url }}/problemas/novo" class="btn btn-lg btn-block btn-danger"><i class="fa fa-life-ring fa-1x"></i>
+            Adicionar Problema</a>
+    </div>
+    <div class="col-md-6">
+        <a href="{{ url }}/topicos/novo" class="btn btn-lg btn-block btn-warning"><i
+                class="fa fa-plus-square fa-1x"></i> Adicionar
+            Tópico</a>
+    </div>
+</div>
+
+
+<div class="row  margin-top">
+    <div class="col-lg-6">
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <i class="fa fa-life-ring fa-fw"></i> Últimos Problemas
+            </div>
+
+            <div class="panel-body no-padding">
+                <div class="table-responsive">
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                        <tr>
+                            <th class="text-center">Cliente</th>
+                            <th class="text-center">Título</th>
+                            <th class="text-center">Categoria</th>
+                            <th class="text-center">Usuário</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for item in problemas %}
+                        <tr>
+                            <td class="text-center">{{ item.cliente }}</td>
+                            <td class="text-center">
+                                {% filter upper %}
+                                {{ item.titulo }}
+                                {% endfilter %}
+                            </td>
+                            <td class="text-center">{{ item.categoria }}</td>
+                            <td class="text-center">{{ item.usuario }}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-lg-6">
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <i class="fa fa-plus-square fa-fw"></i> Últimos Tópicos
+            </div>
+
+            <div class="panel-body no-padding">
+                <div class="table-responsive">
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                        <tr>
+                            <th class="text-center">Problema</th>
+                            <th class="text-center">Título</th>
+                            <th class="text-center">Resolvido</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for item in topicos %}
+                        <tr>
+                            <td class="text-center">{{ item.problema }}</td>
+                            <td class="text-center">{% filter upper %}{{ item.titulo }}{% endfilter %}</td>
+                            <td class="text-center">
+                                {% if item.resolvido == 1 %}
+                                <button class="btn btn-xs btn-success"><i class="fa fa-check-square"></i></button>
+                                {% else %}
+                                <button class="btn btn-xs btn-warning"><i class="fa fa-times"></i></button>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}

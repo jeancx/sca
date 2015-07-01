@@ -1,0 +1,28 @@
+{
+    "name": "jeancx/sca",
+    "type":"framework",
+    "description": "Sistema de Controle de Atendimentos, Trabalho de Banco de Dados M3 Ciência da Computação UNIVALI",
+    "keywords": ["sca","univali","jeancf","router"],
+    "homepage": "http://jeancf.com.br",
+    "license": "MIT",
+    "authors":[
+        {
+          "name": "Jean Carlos Farias",
+          "email": "contato@jeancf.com.br",
+          "homepage": "http://www.jeancf.com.br/"
+        }
+    ],
+    "require":{
+        "php":">=5.3.0",
+        "slim/slim":"2.*",
+        "slim/views":"0.1.*",
+        "twig/twig":"1.*",
+        "twig/extensions": "*",
+        "monolog/monolog": "1.*"
+    },
+    "autoload":{
+        "psr-0":{
+            "": ""
+        }
+    }
+}

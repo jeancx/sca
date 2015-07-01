@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel">Adicionar Cliente</h4>
+</div>
+<div class="modal-body">
+
+    <div class="form-group">
+        <label>Nome</label>
+        <input type="text" class="form-control" name="nome" id="clienteNome">
+    </div>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">
+        Cancelar
+    </button>
+    <button id="btnAdd" type="button" class="btn btn-primary">
+        Salvar
+    </button>
+</div>
+
+<script>
+
+    $("#btnAdd").click(function () {
+
+        var nome = $("#clienteNome").val();
+
+        $.post("{{ url }}/clientes/modal/novo", {nome: nome})
+                .done(function () {
+                    $( "#cliente_id" ).load( "{{ url }}/clientes/select", function() {});
+                    $("[data-dismiss=modal]").trigger({type: "click"});
+                }
+        );
+
+    });
+
+</script>

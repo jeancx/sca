@@ -1,0 +1,122 @@
+<!-- #wrapper -->
+<div id="wrapper">
+
+    <!-- Navegação Topo e Menu -->
+    <nav class="navbar navbar-default navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+        <!-- Menu Topo -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Compactar/Expandir Menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url }}">SCA <span class="hidden-xs">- Sistema de Controle de Atendimentos</span></a>
+        </div>
+
+        <ul class="nav navbar-top-links navbar-right">
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    Jean Carlos Farias
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="{{ url }}/users/editar"><i class="fa fa-user fa-fw"></i> Editar Perfil</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="{{ url }}/sair"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!-- /Menu Topo -->
+
+
+        <!-- Menu Principal -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="active">
+                        <a href="{{ url }}" id="navPrimeiro" title="Painel"><i class="fa fa-dashboard fa-fw"></i> Painel</a>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-life-ring fa-fw"></i> Problemas<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{ url }}/problemas" title="Posts"><i class="fa fa-list fa-fw"></i> Listar
+                                    Problemas</a>
+                            </li>
+                            <li>
+                                <a href="{{ url }}/problemas/novo"><i class="fa fa-plus fa-fw"></i> Adicionar Problema</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-plus-square fa-fw"></i> Tópicos<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{ url }}/topicos" title="Posts"><i class="fa fa-list fa-fw"></i> Listar
+                                    Tópicos</a>
+                            </li>
+                            <li>
+                                <a href="{{ url }}/topico/novo"><i class="fa fa-plus fa-fw"></i> Adicionar Tópico</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-tag fa-fw"></i> Categorias<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{ url }}/categorias"><i class="fa fa-list fa-fw"></i> Listar Categorias</a>
+                            </li>
+                            <li>
+                                <a href="{{ url }}/categorias/novo"><i class="fa fa-plus fa-fw"></i> Nova Categoria</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-users fa-fw"></i> Usuários<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{ url }}/usuarios"><i class="fa fa-list fa-fw"></i> Listar Usuários</a>
+                            </li>
+                            <li>
+                                <a href="{{ url }}/usuarios/novo"><i class="fa fa-plus fa-fw"></i> Novo Usuário</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-area-chart fa-fw"></i> Relatórios<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{ url }}/relatorios/problemas"><i class="fa fa-list fa-fw"></i> Qtd. Problemas</a>
+                            </li>
+                            <li>
+                                <a href="{{ url }}/relatorios/topicos"><i class="fa fa-list fa-fw"></i> Qtd. Tópicos</a>
+                            </li>
+                            <li>
+                                <a href="{{ url }}/relatorios/categorias"><i class="fa fa-list fa-fw"></i> Custo por Categoria</a>
+                            </li>
+                            <li>
+                                <a href="{{ url }}/relatorios/clientes"><i class="fa fa-list fa-fw"></i> Custo por Cliente</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- /.Menu Principal -->
+
+    </nav>
+    <!-- /.Navegação Topo e Menu -->
+
+    <!-- Conteúdo das Paginas -->
+    <div id="content">

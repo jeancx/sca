@@ -1,0 +1,67 @@
+
+/* GERAIS */
+html {
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	padding-top: 0;
+	background-color: #142849;
+	background-image: -webkit-gradient(radial,center center,0,center center,460,from(#165387),to(#142849));
+	background-image: -webkit-radial-gradient(circle,#165387,#142849);
+	background-image: -moz-radial-gradient(circle,#165387,#142849);
+	background-image: -o-radial-gradient(circle,#165387,#142849);
+	background-repeat: no-repeat;
+}
+
+/* CORPO */
+#wrapper {
+    width: 100%;
+}
+
+#logo {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+    width: 400px;
+}
+
+.logo {
+    text-shadow: -1px -1px 20px black;
+    color: #FFFFFF;
+}
+
+.logo-icon
+{
+    font-size: 38px;
+}
+
+.logo-text
+{
+    font-size: 120px;
+}
+
+.logo-slogan
+{
+    font-size: 22px;
+    margin-top: -10px;
+}
+
+#login {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+    width: 400px;
+}
+
+.login-box {
+	border: 1px solid #444;
+    border-radius: 10px;
+    padding: 15px;
+	-webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    width: 100%;
+    background-color: #ffffff;
+}
