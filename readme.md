@@ -1,2 +1,2 @@
 # sca
-Sistema de Controle de Atendimentos, Trabalho de Banco de Dados M3 Ciência da Computação UNIVALI
+Sistema de Controle de Atendimentos, Trabalho de Banco de Dados M3 CiÃªncia da ComputaÃ§Ã£o UNIVALI

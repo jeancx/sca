@@ -32,6 +32,7 @@ $app->hook('slim.before.dispatch', function() use ($app) {
 
     $url = Config::read('path');
     $app->view()->setData('url', $url);
+    $app->view()->setData('session', $_SESSION);
 
 });
 

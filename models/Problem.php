@@ -62,19 +62,42 @@ class Problem
     }
 
 
-    //List
-    public function getByMonth($year,$month)
+    //CountByMonth
+    public function countByMonth($year,$month)
     {
         $r = array();
 
-        $begin = $year.'-'.$month.'-01';
-        $end = date("Y-m-t", strtotime($begin));
+        $date = $year.'-'.$month.'-1';
+        $begin  = date("Y-m-01", strtotime($date)).' 00:00:00';
+        $end = date("Y-m-t", strtotime($begin)).' 23:59:59';
+
 
         $sql = "SELECT COUNT(*)
             FROM problemas
             WHERE data_hora >= '$begin' AND data_hora <= '$end'";
 
         $cols = $this->core->dbh->query($sql)->fetchColumn();
+
+        return $cols;
+
+    }
+
+
+    //CountByMonth
+    public function costByProblem($id)
+    {
+        $r = array();
+
+        $sql = "SELECT problemas.titulo as titulo,
+            topicos.resolvido as resolvido
+            FROM problemas
+            INNER JOIN clientes ON problemas.cliente_id=clientes.id
+            INNER JOIN categorias ON problemas.categoria_id=categorias.id
+            INNER JOIN usuarios ON problemas.usuario_id=usuarios.id
+            INNER JOIN topicos ON problemas.id=topicos.problema_id
+            WHERE problemas.id=$id";
+
+        $cols = $this->core->dbh->query($sql)->fetchAll();
 
         return $cols;
 

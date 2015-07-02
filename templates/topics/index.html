@@ -11,7 +11,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 Listagem de Tópicos
-                <a href="{{ url }}/topicos/novo{% if id is defined %}/{{ id }}{% endif %}" class="btn btn-primary pull-right" style="padding: 7px; margin-top: -8px; margin-right: -12px">
+                <a href="{{ url }}/topico/novo{% if id is defined %}/{{ id }}{% endif %}" class="btn btn-primary pull-right" style="padding: 7px; margin-top: -8px; margin-right: -12px">
                     <i class="fa fa-plus-square fa-lg"></i> Adicionar
                 </a>
             </div>
@@ -40,7 +40,13 @@
                             <td>{% filter upper %}{{ item.titulo }}{% endfilter %}</td>
                             <td>{{ item.programador }}</td>
                             <td>{{ item.tempo }} minuto(s)</td>
-                            <td>{{ item.resolvido }}</td>
+                            <td class="text-center">
+                                {% if item.resolvido == 1 %}
+                                <button class="btn btn-xs btn-success"><i class="fa fa-check-square"></i></button>
+                                {% else %}
+                                <button class="btn btn-xs btn-warning"><i class="fa fa-times"></i></button>
+                                {% endif %}
+                            </td>
                             <td>
                                 <a href="{{ url }}/topico/{{ item.id }}/editar" class="btn btn-xs btn-primary">
                                     <i class="fa fa-pencil"></i>

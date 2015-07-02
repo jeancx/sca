@@ -34,7 +34,7 @@
                                     <div class="col-md-4">
                                         <button type="button" data-toggle="modal"
                                                 href="{{ url }}/clientes/modal/novo"
-                                                data-target="#remoteModal" class="btn btn-default btn-block">
+                                                data-target="#clientesModal" class="btn btn-default btn-block">
                                             Adicionar Cliente
                                         </button>
                                     </div>
@@ -107,6 +107,28 @@
     <!-- /.col-lg-12 -->
 </div>
 <!-- /.row -->
+
+<!-- Modal -->
+<div class="modal fade" id="clientesModal" tabindex="-1" role="dialog" aria-labelledby="clientesModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Enviar</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 
 <!-- Modal -->
 <div class="modal fade" id="remoteModal" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel"
